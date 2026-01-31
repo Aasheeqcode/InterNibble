@@ -1,4 +1,5 @@
 import express from "express"
+import connectDB from "./lib/db.js"
 import {ENV} from "./lib/env.js"
 import path from "path"
 
@@ -15,4 +16,5 @@ if(ENV.ENV_MODE==="production"){
 
 app.listen(ENV.PORT,()=>{
     console.log(`Server started at ${ENV.PORT}`);
+    connectDB();
 })
