@@ -23,7 +23,7 @@ if(ENV.ENV_MODE==="production"){
     app.use(express.static(frontendPath));
 
     // 2. Correct the wildcard (use '*' instead of '{*any}')
-    app.get('*', (req, res) => {
+    app.get('/{*any}', (req, res) => {
         res.sendFile(path.join(frontendPath, "index.html"));
     });
 }
