@@ -14,7 +14,7 @@ app.use(cors({
     origin:ENV.CLIENT_URL,
     credentials:true
 }))
-app.get('api/inngest',serve({client:inngest,functions}))
+app.use('/api/inngest',serve({client:inngest,functions}))
 
 if(ENV.ENV_MODE==="production"){
     app.use(express.static(path.join(__dirname,"../frontend/dist")))
@@ -24,7 +24,7 @@ if(ENV.ENV_MODE==="production"){
     })
 }
 
-app.listen(ENV.PORT,()=>{
+app.listen(ENV.PORT,'0.0.0.0',()=>{
     console.log(`Server started at ${ENV.PORT}`);
     connectDB();
 })
