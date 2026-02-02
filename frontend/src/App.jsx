@@ -4,6 +4,7 @@ function App(){
   return(
     <>
     <header>
+    <h1>I guess i can found it now why not</h1>
     <SignedIn>
       <SignOutButton/>
       <UserButton/>
